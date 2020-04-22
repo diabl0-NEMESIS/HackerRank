@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main() {
+
+    int i;
+    double d;
+    float f;
+    char c;
+    long l;
+
+    cin>>i>>l>>c>>f>>d;
+
+   // cout<<i<<"\n"<<i<<"\n"<<l<<"\n"<<c<<"\n"<<f<<"\n"<<d;
+   printf("%d\n",i);
+   printf("%ld\n",l);
+   printf("%c\n",c);
+   // using .3f for setting the precision upto 3 places after decimal for the float value(f)
+   printf("%.3f\n",f);
+   //using .9lf for setting the precision upto 9 places after decimal for the doule value(lf)
+   printf("%.9lf\n",d);
+   
+
+    return 0;
+}
