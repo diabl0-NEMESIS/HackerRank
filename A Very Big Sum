@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+// Complete the aVeryBigSum function below.
+long aVeryBigSum(int range, long int * ar) {
+ long int sum=0;
+for(int i=0;i<range;i++)
+{
+ sum+=ar[i];
+}
+
+return sum;
+
+}
+
+int main()
+{
+    int range;
+    scanf("%d",&range);
+
+     long int *a = (long int *)malloc(range*sizeof( long int));
+    for(int i=0;i<range;i++)
+    {
+       scanf("%ld",&a[i]);
+
+    }
+   long int x = aVeryBigSum(range,a);
+
+    printf("%ld",x);
+}
