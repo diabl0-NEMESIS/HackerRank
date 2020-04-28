@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<stdlib.h>
+ 
+
+int diagonalDifference(int size, int** arr) 
+{
+ int diff=0,left=0,right=0;
+for(int i=0;i<size;i++)
+{  
+    
+    for(int j=0;j<size;j++)
+    {
+       if(i==j)
+       {
+           left=left + arr[i][j];
+       }
+       if(i+j==size-1)
+       {
+           right = right+arr[i][j];
+       }
+
+
+    }
+}
+    
+     if(left>right)
+     {
+     diff = left-right;
+     }
+     else
+     diff=right-left;
+
+     return diff;
+  
+
+
+
+}
+
+int main()
+{
+   int size;
+   scanf("%d",&size);
+   
+   
+   //allocating memory to a 2d array
+   int *a[size];
+    for(int i=0;i<size;i++)
+    {
+
+       a[i]  =(int *)malloc(size*sizeof(int));
+    }
+
+
+for(int i=0;i<size;i++)
+{
+  for(int j=0;j<size;j++)
+  {
+      scanf("%d",&a[i][j]);
+  }
+
+}
+int diff =diagonalDifference(size,a);
+
+printf("%d",diff);
+}
