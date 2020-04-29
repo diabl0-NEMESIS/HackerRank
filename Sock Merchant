@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+#include<stdlib.h>
+using namespace std;
+
+
+int sockMerchant(int size,int *arr)
+{   int temp,pair=0;
+
+  //arr[size]=999;
+  for(int i=0;i<size;i++)
+  {
+   for(int j=i;j<size;j++)
+   {
+         if(arr[i]>arr[j])
+         {  
+              temp =arr[i];
+              arr[i]= arr[j];
+              arr[j]= temp;
+
+
+         }
+   }
+
+}
+
+ for(int i=0;i<size;i++)
+ {
+     if(arr[i]==arr[i+1])
+     {
+         pair++;
+         i=i+1;
+     }
+ }
+
+return pair;
+  
+
+
+}
+int main()
+{
+
+   int size,pairc=0;
+   scanf("%d",&size);
+
+   int *arr =(int *)malloc(size*sizeof(int));
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+
+   pairc=sockMerchant(size,arr); 
+
+   printf("%d",pairc);
+  return 0;
+
+}
