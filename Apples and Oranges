@@ -1,0 +1,57 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void calculator(long int s, long int t,long int a,long int b ,long int m,long int n , long int apples[],long int oranges[])
+{
+   long int app=0,ora=0;
+    for(long int i=0;i<m;i++)
+    {
+
+   apples[i] = apples[i]+a;
+
+  if(apples[i]>=s && apples[i]<=t )
+     {
+         app++;
+     }
+
+    }
+  
+ 
+        for(long int i=0;i<n;i++)
+        {
+                oranges[i]=oranges[i]+b;
+
+            
+            if(oranges[i]>=s && oranges[i]<=t )
+             {
+                 ora++;
+             }
+ 
+        }
+
+        cout<<app<<"\n";
+        cout<<ora;
+
+}
+
+int main()
+{
+    long int s,t,a,b,m,n;
+  cin>>s>>t;
+  cin>>a>>b;
+  cin>>m>>n; //m apples and n oranges
+
+ long int *apples = new long int[m]();
+ long int *oranges = new long int[n]();
+ 
+
+         for(int i=0;i<m;i++)
+             cin>>apples[i];
+
+          for(int i=0;i<n;i++)
+            cin>>oranges[i];
+
+
+  calculator(s,t,a,b,m,n,apples,oranges);
+}
