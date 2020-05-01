@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+#include<stdlib.h>
+using namespace std;
+
+
+string timeConversion(string s) {
+
+
+ int length = s.length();
+  int arr[6];
+  
+  int sum = ((int)s[0]-48)*10 + ((int)s[1]-48);
+  if(s[length-2]=='P'&& s[length-1]=='M'&& sum!=12)
+     { 
+          sum = sum + 12;
+
+          arr[0] = sum/10;
+          arr[1] = sum%10;
+       
+     }else if(s[length-2]=='A'&& s[length-1]=='M' && s[0]=='1' && s[1]=='2')
+     {
+          arr[0]=0;
+          arr[1]=0;
+
+     }
+      else
+      {  arr[0]=((int)s[0]-48);
+         arr[1]=((int)s[1]-48);
+       }
+     arr[2]=((int)s[3]-48);
+     arr[3]=((int)s[4]-48);
+     arr[4]=((int)s[6]-48);
+     arr[5]=((int)s[7]-48);
+     
+   //using to_string(array[index]) to convert integer array values to characters
+  string stri;
+    stri = to_string(arr[0])+to_string(arr[1])+":"+to_string(arr[2])+to_string(arr[3])+":"+to_string(arr[4])+to_string(arr[5]);
+
+
+  return stri;
+}
+
+int main()
+{
+   string str,answer;
+   cin>>str;
+  answer= timeConversion(str);
+
+   cout<<answer;
+}
