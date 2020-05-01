@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+#include<stdlib.h>
+using namespace std;
+
+
+int * rounder(int size,int *arr)
+{   
+     int number,x;
+     for(int i=0;i<size;i++)
+     {
+         number = arr[i];
+       
+        x= (number/10)*10;
+        
+         while(x<number){
+             x = x+5;
+         }
+
+          if(number < 38)
+          {
+              continue;
+          }
+          else
+                {
+
+                    if(x-number<3)
+                    {
+                        number = x;
+                        arr[i]=number;
+                    }
+                }
+
+
+     }
+ 
+
+  return  arr;
+
+}
+
+
+
+int main()
+{
+
+   int size;
+   cin>>size;
+  int *arr = new int[size]();
+  for(int i=0;i<size;i++)
+{
+    cin>>arr[i];
+}
+ 
+  
+int * rounded = rounder(size,arr);
+   
+    for(int i=0;i<size ;i++)
+    {
+        cout<<rounded[i]<<"\n";
+    }
+
+}
