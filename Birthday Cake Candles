@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+#include<stdlib.h>
+using namespace std;
+
+
+
+// Complete the birthdayCakeCandles function below.
+int birthdayCakeCandles(int arr[],int size) {
+  int max;
+  max=arr[0];
+ for(int i=0;i<size;i++)
+ {
+   if(arr[i]>max)
+   {
+       max = arr[i];
+   }
+ }
+  int big=0;
+  for(int i=0;i<size;i++)
+  {
+
+            if(arr[i]==max)
+        {
+            big++;
+        }
+  }
+
+ return big;
+}
+
+int main()
+{
+  int size,blows;
+  cin>>size;
+
+  int *arr = new int[size]();
+  for(int i=0;i<size;i++)
+  {
+    cin>>arr[i]; 
+  }
+
+  blows=birthdayCakeCandles(arr,size);
+  cout<<blows;
+}
